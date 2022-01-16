@@ -30,9 +30,32 @@ I used [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_
 	* [MLX Images](https://github.com/keuhdall/images_example)
 	* [FDF Cookbook](https://disk.yandex.ru/d/Y618wPWjYkOqXg)
 
+## Compiling and running
+---
+
+Run <mark>make</mark>. An executable will compile. Currently only tested on OS X.
+
+Run it with <mark>./fdf [map]</mark>. A bunch of sample maps are provided in the <mark>maps directory.</mark> 
+
+* for mandatory part :
+
+```bash
+$ make
+$ ./fdf [map]
+```
+
+* for bonus part :
+
+```bash
+$ make bonus
+$ ./fdf [map]
+```
+	
+
+
 ## Usage
 ---
-After running make to generate the fdf executable you can run the program with ./fdf [valid_fdf_file].
+After running <mark>make</mark> to generate the fdf executable you can run the program with <mark>./fdf [valid_fdf_file]</mark>.
 
 A valid fdf file will consist of a matrix of number delimited by spaces. Each number's position represents an (x , y) coordinate with the value of the number itself representing a height (z).
 
