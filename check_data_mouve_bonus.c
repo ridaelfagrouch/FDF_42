@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:30:32 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/16 17:12:07 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/18 12:08:55 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,12 @@
 
 void	rotation_mov(t_data *data)
 {
-	if (data->cord.alpha_x != 0)
-	{
-		rotation_x(&data->indx.y, &data->cord.z, data->cord.alpha_x);
-		rotation_x(&data->indx.y1, &data->cord.z1, data->cord.alpha_x);
-	}
-	if (data->cord.alpha_y != 0)
-	{
-		rotation_y(&data->indx.x, &data->cord.z, data->cord.alpha_y);
-		rotation_y(&data->indx.x1, &data->cord.z1, data->cord.alpha_y);
-	}
-	if (data->cord.alpha_z != 0)
-	{
-		rotation_z(&data->indx.x, &data->indx.y, data->cord.alpha_z);
-		rotation_z(&data->indx.x1, &data->indx.y1, data->cord.alpha_z);
-	}
+	if (data->rotition == 1)
+		rotation_x(data);
+	if (data->rotition == 2)
+		rotation_y(data);
+	if (data->rotition == 3)
+		rotation_z(data);
 }
 
 //**********************************************************//

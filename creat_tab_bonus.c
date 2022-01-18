@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 17:07:33 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/16 13:16:41 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/17 13:12:12 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	creat_row_proces(t_data *data, int *wrong_line)
 	data->whidth = strlen_split(data);
 	if (*wrong_line == 0)
 		*wrong_line = data->whidth;
-	if (data->whidth != *wrong_line)
+	if (data->whidth != *wrong_line || data->creat.str[0] == '\n')
 		*wrong_line = -1;
 	free(data->creat.str);
 }

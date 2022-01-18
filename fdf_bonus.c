@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 17:02:13 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/16 16:56:42 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/17 12:03:29 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,12 @@ int	main(int argc, char *argv[])
 		if (data->serch != 0)
 			creatmatrix(argv[1], data);
 		draw_put_imag(data);
+	}
+	else
+	{
+		free(data);
+		perror("bad arg number\n");
+		exit(1);
 	}
 	if (data->serch != 0)
 		free_matrix(data->matrix2);

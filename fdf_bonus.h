@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:33:27 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/16 18:10:18 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/18 12:09:03 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef struct d_data
 	int		p;
 	int		ran;
 	double	zoom_offset;
+	int		rotition;
 	t_coord	cord;
 	t_ind	indx;
 	t_tab	creat;
@@ -153,9 +154,9 @@ void	creatmatrix_proces(t_data *data);
 void	creatmatrix(char *argv, t_data *data);
 void	iso_pro(int *x, int *y, int z);
 void	chek_data_height(t_data *data);
-void	rotation_x(int *y, int *z, float alpha);
-void	rotation_y(int *x, int *z, float alpha);
-void	rotation_z(int *x, int *y, float alpha);
+void	rotation_x(t_data *data);
+void	rotation_y(t_data *data);
+void	rotation_z(t_data *data);
 void	message_error_matrix_numb(int i, t_data *data);
 void	message_error_matrix_color(int i, t_data *data);
 void	message_error_main(int i, t_data *data);

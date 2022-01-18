@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:16:04 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/16 16:03:02 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/18 12:38:00 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,38 @@ void	zoom_centre(int keycode, t_data *data)
 		data->y_offset += 10;
 }
 
-void	rotation_x(int *y, int *z, float alpha)
+void	rotation_x(t_data *data)
 {
-	*y = (*y * cos(alpha)) + (*z * sin(alpha));
-	*z = (*z * cos(alpha)) - (*y * sin(alpha));
+	data->indx.y = (data->indx.y * cos(data->cord.alpha_x)) \
+		+ (data->cord.z * sin(data->cord.alpha_x));
+	data->cord.z = (data->cord.z * cos(data->cord.alpha_x)) \
+		- (data->indx.y * sin(data->cord.alpha_x));
+	data->indx.y1 = (data->indx.y1 * cos(data->cord.alpha_x)) \
+		+ (data->cord.z1 * sin(data->cord.alpha_x));
+	data->cord.z1 = (data->cord.z1 * cos(data->cord.alpha_x)) \
+		- (data->indx.y1 * sin(data->cord.alpha_x));
 }
 
-void	rotation_y(int *x, int *z, float alpha)
+void	rotation_y(t_data *data)
 {
-	*x = (*x * cos(alpha)) + (*z * sin(alpha));
-	*z = (*z * cos(alpha)) - (*x * sin(alpha));
+	data->indx.x = (data->indx.x * cos(data->cord.alpha_y)) \
+		+ (data->cord.z * sin(data->cord.alpha_y));
+	data->cord.z = (data->cord.z * cos(data->cord.alpha_y)) \
+		- (data->indx.x * sin(data->cord.alpha_y));
+	data->indx.x1 = (data->indx.x1 * cos(data->cord.alpha_y)) \
+		+ (data->cord.z1 * sin(data->cord.alpha_y));
+	data->cord.z1 = (data->cord.z1 * cos(data->cord.alpha_y)) \
+		- (data->indx.x1 * sin(data->cord.alpha_y));
 }
 
-void	rotation_z(int *x, int *y, float alpha)
+void	rotation_z(t_data *data)
 {
-	*x = (*x * cos(alpha)) - (*y * sin(alpha));
-	*y = (*x * sin(alpha)) + (*y * cos(alpha));
+	data->indx.x = (data->indx.x * cos(data->cord.alpha_z)) \
+		- (data->indx.y * sin(data->cord.alpha_z));
+	data->indx.y = (data->indx.x * sin(data->cord.alpha_z)) \
+		+ (data->indx.y * cos(data->cord.alpha_z));
+	data->indx.x1 = (data->indx.x1 * cos(data->cord.alpha_z)) \
+		- (data->indx.y1 * sin(data->cord.alpha_z));
+	data->indx.y1 = (data->indx.x1 * sin(data->cord.alpha_z)) \
+		+ (data->indx.y1 * cos(data->cord.alpha_z));
 }
