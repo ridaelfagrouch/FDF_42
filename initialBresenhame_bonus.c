@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:28:15 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/17 14:58:26 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/19 16:53:26 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	initial_bresenhame(t_data *data)
 	data->cord.z = data->matrix[data->indx.y][data->indx.x];
 	data->cord.z1 = data->matrix[data->indx.y1][data->indx.x1];
 	check_color(data, &data->cord.z, &data->cord.z1);
+	altitud_mov2(data);
 	altitud_mov(data);
 	multep_zoom(data);
 	rotation_mov(data);
@@ -80,4 +81,16 @@ void	multep_zoom(t_data *data)
 	data->indx.y = data->indx.y * (data->zoom + data->zoom_offset);
 	data->indx.x1 = data->indx.x1 * (data->zoom + data->zoom_offset);
 	data->indx.y1 = data->indx.y1 * (data->zoom + data->zoom_offset);
+}
+
+void	altitud_mov2(t_data *data)
+{
+	if (data->cord.z != 0 || data->cord.z1 != 0)
+	{
+		if (data->check_av == 1)
+		{
+			data->cord.z *= data->z_altitude;
+			data->cord.z1 *= data->z_altitude;
+		}
+	}
 }

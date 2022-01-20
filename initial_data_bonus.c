@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:19:22 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/17 12:04:07 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/19 13:58:36 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	initial_data(t_data *data)
 	data->p = 2;
 	data->ran = 2;
 	data->k = 0;
+	data->check_av = 0;
 }

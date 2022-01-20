@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:33:27 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/18 12:09:03 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/20 17:20:58 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,35 +52,37 @@ typedef struct creat
 	int		fd;
 	char	**splt_str;
 	int		**result;
+	int		check_av;
 }	t_tab;
 
 typedef struct d_data
 {
-	int		whidth;
-	int		height;
-	int		color;
-	void	*mlx_ptr;
-	void	*win_ptr;
-	int		**matrix;
-	int		**matrix2;
-	double	zoom;
-	double	z_altitude;
-	double	x_offset;
-	double	y_offset;
-	int		serch;
-	void	*img;
-	char	*addr;
-	int		bpp;
-	int		line_length;
-	int		endian;
-	int		k;
-	int		p;
-	int		ran;
-	double	zoom_offset;
-	int		rotition;
-	t_coord	cord;
-	t_ind	indx;
-	t_tab	creat;
+	int					whidth;
+	int					height;
+	int					color;
+	void				*mlx_ptr;
+	void				*win_ptr;
+	int					**matrix;
+	int					**matrix2;
+	double				zoom;
+	double				z_altitude;
+	double				x_offset;
+	double				y_offset;
+	int					serch;
+	void				*img;
+	char				*addr;
+	int					bpp;
+	int					line_length;
+	int					endian;
+	int					k;
+	unsigned int		p;
+	int					ran;
+	double				zoom_offset;
+	int					rotition;
+	int					check_av;
+	t_coord				cord;
+	t_ind				indx;
+	t_tab				creat;
 }	t_data;
 
 # define WINDOW_WHITE	1900
@@ -125,10 +127,10 @@ int		count_row(int fd);
 int		strlen_split(t_data *data);
 void	vergul_cherch(t_data *data);
 void	rempler_numb_matrix(t_data *data);
-void	creat_row_proces(t_data *data, int *wrong_line);
-void	creat_row(char *argv, t_data *data, int *wrong_line);
+void	creat_row_proces(t_data *data, int *wrong_line, int *err);
+void	creat_row(char *argv, t_data *data, int *wrong_line, int *err);
 void	draw_put_imag(t_data *data);
-void	main_data(t_data *data, char *argv, int *wrong_line);
+void	main_data(t_data *data, char *argv, int *wrong_line, int *err);
 void	initial_data(t_data *data);
 void	check_color(t_data *data, int *z, int *z1);
 int		check_sx_sy(int i, int j);
@@ -167,6 +169,11 @@ int		print_variable2(t_data *data);
 int		mlx_key_init(t_data *data);
 int		clo_se1(int keycode, t_data *data);
 int		close_fdf1(t_data *data);
-void	message_error_wrong_line(t_data *data);
+void	message_error_wrong_line(t_data *data, int i);
+void	ft_check_arg(char *argv);
+void	check_arg_3_4(char *av_3, char *av_4, t_data *data);
+int		check_av4(char *av_4, int *j, t_data *data);
+int		check_av3(char *av_3, int *i, t_data *data);
+void	altitud_mov2(t_data *data);
 
 #endif

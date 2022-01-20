@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 13:02:04 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/14 22:26:04 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/20 20:05:14 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,16 @@ void	ft_check_split(t_data *data)
 		else if (ft_strchr(data->creat.splt_str[i], ','))
 		{
 			splt2 = ft_split(data->creat.splt_str[i], ',');
-			data->matrix2[data->creat.j][i] = ft_char_to_hex(splt2[1]);
-			free_split(splt2);
+			if (splt2[1][0] == '0' && splt2[1][1] == 'x')
+			{
+				data->matrix2[data->creat.j][i] = ft_char_to_hex(splt2[1]);
+				free_split(splt2);
+			}
 		}
 		i++;
 	}
 }
+
 //**********************************************************//
 //**********************************************************//
 

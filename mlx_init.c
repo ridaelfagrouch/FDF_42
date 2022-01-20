@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 14:16:32 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/14 16:56:31 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/18 19:03:28 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	creat_mlx(t_data *data)
 	data->mlx_ptr = mlx_init();
 	if (data->mlx_ptr == NULL)
 	{
-		free_matrix(data->matrix2);
+		if (data->serch != 0)
+			free_matrix(data->matrix2);
 		free_matrix(data->matrix);
 		free(data);
 		return ;
@@ -41,7 +42,8 @@ void	creat_mlx(t_data *data)
 	if (data->win_ptr == NULL)
 	{
 		free(data->mlx_ptr);
-		free_matrix(data->matrix2);
+		if (data->serch != 0)
+			free_matrix(data->matrix2);
 		free_matrix(data->matrix);
 		free(data);
 		return ;

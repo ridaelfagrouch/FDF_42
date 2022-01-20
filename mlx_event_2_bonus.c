@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:48:31 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/17 12:05:29 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/19 16:49:19 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,11 @@ int	projection_para(int keycode, t_data *data)
 
 int	altitud_map(int keycode, t_data *data)
 {
+	if (data->check_av == 1)
+	{
+		data->z_altitude = 1;
+		data->check_av = 0;
+	}
 	if (keycode == PLUS)
 	{
 		data->z_altitude += 2;

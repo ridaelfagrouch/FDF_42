@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:33:27 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/01/16 13:02:11 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/01/20 17:21:10 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ typedef struct d_data
 	int		k;
 	int		p;
 	int		ran;
+	int		check_av;
 	double	zoom_offset;
 	t_coord	cord;
 	t_ind	indx;
@@ -113,10 +114,10 @@ int		count_row(int fd);
 int		strlen_split(t_data *data);
 void	vergul_cherch(t_data *data);
 void	rempler_numb_matrix(t_data *data);
-void	creat_row_proces(t_data *data, int *wrong_line);
-void	creat_row(char *argv, t_data *data, int *wrong_line);
+void	creat_row_proces(t_data *data, int *wrong_line, int *err);
+void	creat_row(char *argv, t_data *data, int *wrong_line, int *err);
 void	draw_put_imag(t_data *data);
-void	main_data(t_data *data, char *argv, int *wrong_line);
+void	main_data(t_data *data, char *argv, int *wrong_line, int *err);
 void	initial_data(t_data *data);
 void	check_color(t_data *data, int *z, int *z1);
 int		check_sx_sy(int i, int j);
@@ -141,6 +142,11 @@ int		close_fdf1(t_data *data);
 int		print_screen1(t_data *data);
 int		print_screen2(t_data *data);
 int		color_screen1(t_data *data);
-void	message_error_wrong_line(t_data *data);
+void	message_error_wrong_line(t_data *data, int i);
+void	ft_check_arg(char *argv);
+void	check_arg_3_4(char *av_3, char *av_4, t_data *data);
+int		check_av4(char *av_4, int *j, t_data *data);
+int		check_av3(char *av_3, int *i, t_data *data);
+void	altitud_mov2(t_data *data);
 
 #endif
