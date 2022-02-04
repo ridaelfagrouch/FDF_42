@@ -37,7 +37,7 @@ Run <mark>make</mark>. An executable will compile. Currently only tested on OS X
 
 Run it with <mark>./fdf [map]</mark>. A bunch of sample maps are provided in the <mark>maps directory.</mark> 
 
-* for mandatory part :
+* **for mandatory part** :
 
 ```bash
 $ make
@@ -50,7 +50,7 @@ $ make
 $ ./fdf [map] [map zoom(int)] [map altitude(int)]
 ```
 
-* for bonus part :
+* **for bonus part** :
 
 ```bash
 $ make bonus
