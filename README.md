@@ -43,12 +43,24 @@ Run it with <mark>./fdf [map]</mark>. A bunch of sample maps are provided in the
 $ make
 $ ./fdf [map]
 ```
+OR :
+
+```bash
+$ make
+$ ./fdf [map] [map zoom(int)] [map altitude(int)]
+```
 
 * for bonus part :
 
 ```bash
 $ make bonus
 $ ./fdf [map]
+```
+OR :
+
+```bash
+$ make bonus
+$ ./fdf [map] [map zoom(int)] [map altitude(int)]
 ```
 	
 
